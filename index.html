@@ -7,9 +7,24 @@
 </head>
 <body>
 <div class="score"></div>
-<div class="game"></div>
-<div class="start">Начать игру</div>
-<div class="gameArea"></div>
+<div class="game">
+	<button class="start">Начать игру</button>
+	<div class="levels">
+		<button class="btn" data-level-game="1" disabled>easy</button>
+		<button class="btn" data-level-game="2" disabled>medium</button>
+		<button class="btn" data-level-game="3" disabled>hardcore</button>
+	</div>
+	<button class="button-music">
+		<img src="./img/sound.png" alt="" class="open-music hide">
+		<img src="./img/no-sound.png" alt="" class="close-music">
+	</button>
+	<div class="gameArea"></div>
+	
+	<div class="records hide">
+		<h3 class="title-records">Текущий рекорд:</h3>
+		<span class="record-span"></span>
+	</div>
+</div>
 <script src="app.js"></script>
 </body>
 </html>

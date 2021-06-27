@@ -30,6 +30,10 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+button {
+	border: unset;
+}
+
 body {
 	line-height: 1;
 }
@@ -55,12 +59,8 @@ table {
 
 html,
 body {
+	position: relative;
 	margin: 0;
-	height: 100%;
-}
-
-.hide {
-	display: none;
 }
 
 .car,
@@ -70,12 +70,12 @@ body {
 	bottom: 10px;
 	width: 50px;
 	height: 100px;
-	background: transparent url("./img/player.png") center / cover no-repeat;
+	background: transparent url("./img/player.png") center / contain no-repeat;
 }
 
 .gameArea {
 	width: 300px;
-	height: 100%;
+	height: calc(100vh - 100px);
 	position: relative;
 	margin: auto;
 	background: #222;
@@ -88,4 +88,156 @@ body {
 	width: 10px;
 	height: 50px;
 	background-color: #fff;
+}
+
+.levels {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: calc(100px - 2rem);
+	width: 100%;
+	padding: 1rem;
+	box-shadow: 3px 3px 5px 1px #a19595;
+	font-size: 20px;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn {
+	font: inherit;
+	text-decoration: none;
+	display: inline-block;
+	width: 140px;
+	height: 45px;
+	line-height: 45px;
+	border: none;
+	border-radius: 45px;
+	margin: 10px 20px;
+	font-size: 11px;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 3px;
+	font-weight: 600;
+	color: #524f4e;
+	background: white;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+	transition: .3s;
+	cursor: pointer;
+}
+
+.btn:hover {
+	background: rgb(232, 95, 76);
+	box-shadow: 0 15px 15px rgb(152, 15, 0);
+	color: white;
+	transform: translateY(-7px);
+}
+
+.btn:disabled {
+	background-color: rgb(160, 155, 155);
+	color: #524f4e;
+	cursor: none;
+	
+}
+
+.score {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	padding: 1rem;
+	width: auto;
+}
+
+.score.end-game {
+	top: 0;
+	right: 0;
+	z-index: 99;
+	color: #fff;
+	font-size: 30px;
+	width: auto;
+	background: #222;
+}
+
+.start {
+	position: absolute;
+	font-size: 18px;
+	text-align: center;
+	font-family: Arial, sans-serif, SansSerif;
+	border-radius: 45px;
+	color: #fff;
+	background: rgb(160, 155, 155);
+	padding: .7em 1.5em;
+	outline: none;
+	cursor: pointer;
+	z-index: 200;
+}
+
+.start:hover {
+	background: rgb(232, 95, 76);
+	color: black;
+}
+
+.start:active {
+	background: rgb(152, 15, 0);
+}
+
+.game {
+	height: 100%;
+	padding-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+.hide {
+	display: none;
+}
+
+.records {
+	position: absolute;
+	top: 4%;
+	left: 0;
+	width: 314px;
+	height: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+}
+
+.title-records {
+	font-weight: 700;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.button-music {
+	position: fixed;
+	top: 10%;
+	right: 3%;
+	height: 16px;
+	width: auto;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+	
+}
+
+.button-music:hover {
+	opacity: 0.4;
+}
+
+.open-music {
+	width: 100%;
+	height: 100%;
+}
+
+.close-music {
+	width: 100%;
+	height: 100%;
 }
